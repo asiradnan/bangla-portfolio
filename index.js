@@ -24,6 +24,12 @@ const frontendProjects = [
         description: "এইচটিএমএল, সিএসএস এবং জাভাস্ক্রিপ্ট ব্যবহার করে তৈরি ক্লাসিক টিক-ট্যাক-টো গেম।",
         link: "https://tictactoe.asiradnan.com"
     },
+    {
+        title: "কুইজ",
+        img: "./images/projects_icons/quiz_icon.png",
+        description: "এইচটিএমএল, সিএসএস ও জাভাস্ক্রিপ্ট দিয়ে বানানো কুইজ অ্যাপ।",
+        link: "https://quiz.asiradnan.com"
+    },
 ]
 const projectsDiv = document.getElementById("frontend-projects");
 
