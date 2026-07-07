@@ -1,7 +1,9 @@
 const hamburger = document.getElementById("hamburger")
 const navList = document.getElementById("nav-ul")
 const navListItems = document.querySelectorAll("#nav-ul li")
-const projectsDiv = document.getElementById("frontend-projects");
+const frontendProjectsDiv = document.getElementById("frontend-projects");
+const fullstackProjectsDiv = document.getElementById("fullstack-projects");
+const backendProjectsDiv = document.getElementById("backend-projects");
 
 const frontendProjects = [
     {
@@ -34,6 +36,26 @@ const frontendProjects = [
     },
 ]
 
+const fullstackProjects = [
+    {
+        title: "কিউ আর কোড",
+        img: "./images/projects_icons/qr_icon.jpg",
+        description: "যেকোনো টেক্সট বা লিংক দিয়ে কাস্টম কিউআর (QR) কোড তৈরি করুন!",
+        link: "https://qr.asiradnan.com",
+        category: "django"
+    }
+]
+
+const backendProjects = [
+    {
+        title: "ছোট্ট ইউআরএল",
+        img: "./images/projects_icons/api_icon.png",
+        description: "ছোট্ট ইউআরএল প্রজেক্টের রেস্ট এপিআই (REST API) ব্যাকএন্ড সার্ভিস।",
+        link: "https://u.asiradnan.com",
+        category: "drf"
+    }
+]
+
 hamburger.addEventListener("click", toggle)
 navListItems.forEach(li => {
     li.addEventListener("click", toggle)
@@ -43,7 +65,7 @@ function toggle() {
     navList.classList.toggle("show-menu")
 }
 
-frontendProjects.forEach((project) => {
+function makeIndividualProjectDiv(project) {
     const individualProjectDiv = document.createElement("div")
     individualProjectDiv.classList.add("project")
 
@@ -66,7 +88,18 @@ frontendProjects.forEach((project) => {
     individualProjectDiv.addEventListener("click", () =>
         window.open(project.link), '_blank'
     )
+    return individualProjectDiv
+}
 
-    projectsDiv.appendChild(individualProjectDiv)
+fullstackProjects.forEach((project) => {
+    fullstackProjectsDiv.appendChild(makeIndividualProjectDiv(project))
+})
 
+frontendProjects.forEach((project) => {
+    frontendProjectsDiv.appendChild(makeIndividualProjectDiv(project))
+})
+
+
+backendProjects.forEach((project) => {
+    backendProjectsDiv.appendChild(makeIndividualProjectDiv(project))
 })
