@@ -160,19 +160,6 @@ section {
     margin: 0;
 }
 
-td,
-th {
-    text-align: center;
-    border: 1px solid var(--primary);
-    padding: 4px 8px 4px 8px;
-
-}   
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: auto;
-}
 .skillsDiv {
     display: grid;
     grid-template-columns: 50px auto;
