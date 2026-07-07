@@ -173,6 +173,31 @@ table {
     width: 100%;
     margin: auto;
 }
+.skillsDiv {
+    display: grid;
+    grid-template-columns: 50px auto;
+}
+.skillsDiv h3 {
+    writing-mode: sideways-lr;
+    margin: 0;
+}
+
+.skillCard{
+    display: grid;
+    grid-template-rows: 20% 50% 30%;
+    width: 40vw;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.skillCard h4 {
+    margin: 0;
+}
+
+.skillCard p {
+    font-size: 80%;
+}
 
 footer {
     margin: 20px 0 20px 0;
