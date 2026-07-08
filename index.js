@@ -43,6 +43,20 @@ const fullstackProjects = [
         description: "যেকোনো টেক্সট বা লিংক দিয়ে কাস্টম কিউআর (QR) কোড তৈরি করুন!",
         link: "https://qr.asiradnan.com",
         category: "django"
+    },
+    {
+        title: "সেন্ড উইশ",
+        img: "./images/projects_icons/sendwish_icon.png",
+        description: "নিজের পরিচয় লুকিয়ে যাকে খুশি ইমেইলে উইশ করুন!",
+        link: "https://sendwish.asiradnan.com",
+        category: "django"
+    },
+    {
+        title: "কপি পাস্তা",
+        img: "./images/projects_icons/copypasta_icon.png",
+        description: "লগইন বা ইনস্টলের ঝামেলা ছাড়াই, একটি সিম্পল কী (key) দিয়ে যেকোনো ডিভাইসে দ্রুত ফাইল ও টেক্সট শেয়ার করুন।",
+        link: "https://copypasta.asiradnan.com",
+        category: "django"
     }
 ]
 
