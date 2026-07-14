@@ -4,6 +4,25 @@ const navListItems = document.querySelectorAll("#nav-ul li")
 const frontendProjectsDiv = document.getElementById("frontend-projects");
 const fullstackProjectsDiv = document.getElementById("fullstack-projects");
 const backendProjectsDiv = document.getElementById("backend-projects");
+const frontendSkillsDiv = document.getElementById("frontendSkillsDiv")
+
+const skills = {
+    HTML: "HTML",
+    CSS: "CSS",
+    JS: "JavaScript",
+    DJANGO: "Django",
+    DRF: "Django REST Framework",
+    REACT: "React",
+    NEXTJS: "Next.js",
+    PYTHON: "Python",
+    KOTLIN: "Kotlin",
+    POSTGRESQL: "PostgreSQL",
+    SQLITE: "SQLite",
+    DOCKER: "Docker",
+    NGINX: "Nginx",
+    GIT: "Git",
+    TAILWIND: "Tailwind CSS",
+};
 
 const frontendProjects = [
     {
@@ -11,28 +30,32 @@ const frontendProjects = [
         img: "./images/projects_icons/calculator_icon.png",
         description: "ভ্যানিলা জাভাস্ক্রিপ্ট, এইচটিএমএল, সিএসএস দিয়ে তৈরি বেসিক ক্যালকুলেটর।",
         link: "https://calculator.asiradnan.com",
-        category: "vanilla-js"
+        category: "vanilla-js",
+        skills: [skills.HTML, skills.CSS, skills.JS]
     },
     {
         title: "টিক ট্যাক টো",
         img: "./images/projects_icons/tictactoe_icon.png",
         description: "এইচটিএমএল, সিএসএস এবং জাভাস্ক্রিপ্ট ব্যবহার করে তৈরি ক্লাসিক টিক-ট্যাক-টো গেম।",
         link: "https://tictactoe.asiradnan.com",
-        category: "vanilla-js"
+        category: "vanilla-js",
+        skills: [skills.HTML, skills.CSS, skills.JS]
     },
     {
         title: "কুইজ",
         img: "./images/projects_icons/quiz_icon.png",
         description: "এইচটিএমএল, সিএসএস ও জাভাস্ক্রিপ্ট দিয়ে বানানো কুইজ অ্যাপ।",
         link: "https://quiz.asiradnan.com",
-        category: "vanilla-js"
+        category: "vanilla-js",
+        skills: [skills.HTML, skills.CSS, skills.JS]
     },
     {
         title: "ছোট্ট ইউআরএল",
         img: "./images/projects_icons/chottourl_icon.png",
         description: "যেকোনো বড় URL-কে মুহূর্তেই করুন ছোট ও শেয়ারেবল।",
         link: "https://chottourl.asiradnan.com",
-        category: "react-js"
+        category: "react-js",
+        skills: [skills.HTML, skills.TAILWIND, skills.REACT]
     },
 ]
 
@@ -116,4 +139,27 @@ frontendProjects.forEach((project) => {
 
 backendProjects.forEach((project) => {
     backendProjectsDiv.appendChild(makeIndividualProjectDiv(project))
+})
+
+function makeSkillCard(skill, projects) {
+    const card = document.createElement("div")
+    card.classList.add("skillCard")
+    const skillHeader = document.createElement("h4")
+    skillHeader.innerHTML = skill
+    const projectsParagraph = document.createElement("p")
+    projectsParagraph.innerHTML = "প্রজেক্টসঃ "
+    projects.forEach(project => {
+        const anchor = document.createElement("a")
+        anchor.href = project.link
+        anchor.innerHTML = project.title
+        projectsParagraph.appendChild(anchor)
+    })
+    card.appendChild(skillHeader)
+    card.appendChild(projectsParagraph)
+    return card
+}
+Object.values(skills).forEach(skill => {
+    const projects = frontendProjects.filter(project => project.skills.includes(skill))
+    if (projects.length) frontendSkillsDiv.appendChild(makeSkillCard(skill, projects))
+    
 })
