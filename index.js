@@ -80,6 +80,13 @@ const fullstackProjects = [
         description: "লগইন বা ইনস্টলের ঝামেলা ছাড়াই, একটি সিম্পল কী (key) দিয়ে যেকোনো ডিভাইসে দ্রুত ফাইল ও টেক্সট শেয়ার করুন।",
         link: "https://copypasta.asiradnan.com",
         category: "django"
+    },
+    {
+        title: "পালস ক্যাম্পাস",
+        img: "./images/projects_icons/pulsecampus_icon.png",
+        description: "কলেজের ডিপার্টমেন্ট, স্টুডেন্ট ক্লাব, অ্যানাউন্সমেন্ট এবং ফোরাম সহজে ম্যানেজ করার মডার্ন ওয়েব অ্যাপ।",
+        link: "https://pulsecampus.asiradnan.com",
+        category: "django"
     }
 ]
 
