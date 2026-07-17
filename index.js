@@ -4,7 +4,7 @@ const navListItems = document.querySelectorAll("#nav-ul li")
 const frontendProjectsDiv = document.getElementById("frontend-projects");
 const fullstackProjectsDiv = document.getElementById("fullstack-projects");
 const backendProjectsDiv = document.getElementById("backend-projects");
-const frontendSkillsDiv = document.getElementById("frontendSkillsDiv")
+const skillCardHolder = document.getElementById("skillCardHolder")
 
 const skills = {
     HTML: "HTML",
@@ -167,6 +167,6 @@ function makeSkillCard(skill, projects) {
 }
 Object.values(skills).forEach(skill => {
     const projects = frontendProjects.filter(project => project.skills.includes(skill))
-    if (projects.length) frontendSkillsDiv.appendChild(makeSkillCard(skill, projects))
+    if (projects.length) skillCardHolder.appendChild(makeSkillCard(skill, projects))
     
 })
